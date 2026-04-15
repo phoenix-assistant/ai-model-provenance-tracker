@@ -1,0 +1,89 @@
+{
+  "models": {
+    "17f2310e-85d5-4ab8-8378-44044c691789": {
+      "id": "17f2310e-85d5-4ab8-8378-44044c691789",
+      "createdAt": "2026-04-15T13:43:20.742Z",
+      "name": "test-model",
+      "version": "1.0",
+      "provider": "TestCorp",
+      "trainingDataRefs": [
+        "dc9a6eb4-9268-449f-9566-299dbe3969b1"
+      ],
+      "metadata": {}
+    },
+    "ab968113-62ac-4329-9e3f-5f13e5588178": {
+      "id": "ab968113-62ac-4329-9e3f-5f13e5588178",
+      "createdAt": "2026-04-15T13:43:20.743Z",
+      "name": "lineage-model",
+      "version": "2.0",
+      "provider": "AI Inc",
+      "trainingDataRefs": [],
+      "metadata": {}
+    },
+    "a40699a3-e5e1-455f-9960-721956ff9486": {
+      "id": "a40699a3-e5e1-455f-9960-721956ff9486",
+      "createdAt": "2026-04-15T13:43:20.744Z",
+      "name": "audit-model",
+      "version": "1.0",
+      "provider": "AuditCorp",
+      "trainingDataRefs": [],
+      "metadata": {}
+    },
+    "01b1eda9-960f-4c2f-a823-272e6a1039b9": {
+      "id": "01b1eda9-960f-4c2f-a823-272e6a1039b9",
+      "createdAt": "2026-04-15T13:43:20.744Z",
+      "name": "report-model",
+      "version": "1.0",
+      "provider": "RC",
+      "trainingDataRefs": [],
+      "metadata": {}
+    }
+  },
+  "datasets": {
+    "dc9a6eb4-9268-449f-9566-299dbe3969b1": {
+      "id": "dc9a6eb4-9268-449f-9566-299dbe3969b1",
+      "name": "CommonCrawl",
+      "license": "CC0-1.0",
+      "source": "commoncrawl.org",
+      "metadata": {}
+    },
+    "e3a797f1-8f40-4df2-8bb5-743ecda2b2fb": {
+      "id": "e3a797f1-8f40-4df2-8bb5-743ecda2b2fb",
+      "name": "WikiText",
+      "license": "MIT",
+      "source": "huggingface",
+      "metadata": {}
+    },
+    "6d563727-1702-4326-a55c-02c4d7677bbb": {
+      "id": "6d563727-1702-4326-a55c-02c4d7677bbb",
+      "name": "OpenData",
+      "license": "Apache-2.0",
+      "source": "github.com/open",
+      "metadata": {}
+    },
+    "8e48cdb9-fcc2-49e6-9508-e4bb4c9c620b": {
+      "id": "8e48cdb9-fcc2-49e6-9508-e4bb4c9c620b",
+      "name": "TestDS",
+      "license": "MIT",
+      "source": "test",
+      "metadata": {}
+    }
+  },
+  "lineage": [
+    {
+      "datasetId": "e3a797f1-8f40-4df2-8bb5-743ecda2b2fb",
+      "modelId": "ab968113-62ac-4329-9e3f-5f13e5588178",
+      "relationship": "trained_on"
+    },
+    {
+      "datasetId": "6d563727-1702-4326-a55c-02c4d7677bbb",
+      "modelId": "a40699a3-e5e1-455f-9960-721956ff9486",
+      "relationship": "trained_on"
+    },
+    {
+      "datasetId": "8e48cdb9-fcc2-49e6-9508-e4bb4c9c620b",
+      "modelId": "01b1eda9-960f-4c2f-a823-272e6a1039b9",
+      "relationship": "trained_on"
+    }
+  ]
+}
